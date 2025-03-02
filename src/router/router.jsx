@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home";
+import AvailableStudios from "../pages/AvailableStudios";
+import BookingHistory from "../pages/BookingHistory";
 
 
 
@@ -13,7 +15,15 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home></Home>
-        }
+        },
+        {
+            path: "available_studios",
+            element: <AvailableStudios></AvailableStudios>
+        },
+        {
+            path: "booking_history",
+            element: <BookingHistory></BookingHistory>
+        },
     ]
     
   },
