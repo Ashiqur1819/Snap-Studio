@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
     return (
-      <div className="navbar shadow-sm px-4 md:px-6 lg:px-8 py-4">
+      <div className="navbar bg-white shadow-sm px-4 md:px-6 lg:px-8 py-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden">
@@ -35,7 +35,12 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-2xl font-bold">SnapStudio</a>
+
+          <Link to="/">
+            <button className="text-3xl font-bold text-gray-700 cursor-pointer">
+              SnapStudio
+            </button>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu-horizontal px-1 text-base items-center gap-6">

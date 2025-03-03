@@ -43,7 +43,11 @@ const AvailableStudios = () => {
           availability, and reserve the perfect space for your creative
           needs—whether for work, recording, or photography.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+        <div className="mt-12 flex items-center gap-6">
+          <input type="text" placeholder="Search by Place" className="input input-info focus:border-none focus:outline-offset-0" />
+          <input type="text" placeholder="Search by Radius (10 km)" className="input input-accent focus:border-none focus:outline-offset-0" />
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
           {availableStudios.length == 0 ? (
             <div className="col-span-4 h-80 w-full flex items-center justify-center bg-red-50">
               <h2 className="text-3xl md:text-4xl font-bold text-red-600">

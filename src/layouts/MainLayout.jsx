@@ -4,10 +4,14 @@ import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <header className="sticky top-0 z-10">
+          <Navbar></Navbar>
+        </header>
+        <main>
+          <Outlet></Outlet>
+        </main>
+      </div>
     );
 };
 
