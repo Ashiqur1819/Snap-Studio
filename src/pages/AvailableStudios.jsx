@@ -45,8 +45,8 @@ const AvailableStudios = () => {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
           {availableStudios.length == 0 ? (
-            <div className="col-span-4 h-80 w-full flex items-center justify-center bg-teal-50">
-              <h2 className="text-3xl md:text-4xl font-bold text-teal-500">
+            <div className="col-span-4 h-80 w-full flex items-center justify-center bg-red-50">
+              <h2 className="text-3xl md:text-4xl font-bold text-red-600">
                 No Available Studios Right Now
               </h2>
             </div>

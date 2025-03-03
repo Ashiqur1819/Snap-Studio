@@ -22,13 +22,13 @@ const AvailableStudiosCard = ({ studio }) => {
   useEffect(() => {
     const storedBookings = JSON.parse(localStorage.getItem("bookings")) || [];
     setBookings(storedBookings);
-  }, []);
+  }, [setBookings]);
 
   const handleBooking = () => {
-    if (!date || !timeSlot || !name || !email) {
-      toast.error("All fields are required.");
-      return;
-    }
+    // if (!date || !timeSlot || !name || !email) {
+    //   toast.error("All fields are required.");
+    //   return;
+    // }
 
     const isSlotBooked = bookings.some(
       (booking) =>
@@ -51,6 +51,8 @@ const AvailableStudiosCard = ({ studio }) => {
       timeSlot,
       name,
       email,
+      location: Location,
+      type: Type,
     };
     const updatedBookings = [...bookings, newBooking];
     setBookings(updatedBookings);
@@ -87,7 +89,7 @@ const AvailableStudiosCard = ({ studio }) => {
             onClick={() =>
               document.getElementById(`booking_modal_${Id}`).showModal()
             }
-            className="mt-4 w-full bg-sky-500 text-white py-2 hover:bg-sky-600 transition cursor-pointer"
+            className="mt-4 w-full bg-sky-500 text-white py-2 hover:bg-sky-600 transition cursor-pointer font-medium"
           >
             Book Now
           </button>
@@ -140,16 +142,19 @@ const AvailableStudiosCard = ({ studio }) => {
               className="border p-2 w-full"
             />
           </div>
-          <div className="mt-4 flex justify-end">
+          <div className="mt-4 flex justify-end gap-3">
             <button
-              className="btn btn-secondary mr-2"
+              className="mt-4 w-32 bg-red-500 text-white py-2 hover:bg-red-600 transition cursor-pointer font-medium"
               onClick={() =>
                 document.getElementById(`booking_modal_${Id}`).close()
               }
             >
               Cancel
             </button>
-            <button className="btn btn-primary" onClick={handleBooking}>
+            <button
+              className="mt-4 w-40 bg-sky-500 text-white py-2 hover:bg-sky-600 transition cursor-pointer font-medium"
+              onClick={handleBooking}
+            >
               Confirm Booking
             </button>
           </div>
