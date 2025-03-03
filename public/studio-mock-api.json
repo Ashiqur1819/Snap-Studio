@@ -21,8 +21,8 @@
     "PricePerHour": 1525,
     "Currency": "BDT",
     "Availability": {
-      "Open": "09:00",
-      "Close": "18:00"
+      "Open": "00:10",
+      "Close": "01:50"
     },
     "Rating": 4,
     "Images": [
