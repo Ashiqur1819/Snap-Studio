@@ -10,7 +10,6 @@ const AvailableStudiosCard = ({ studio }) => {
     Amenities = [],
     PricePerHour,
     Currency,
-    availableSlots = [],
   } = studio || {};
 
   const [date, setDate] = useState("");
@@ -25,10 +24,10 @@ const AvailableStudiosCard = ({ studio }) => {
   }, [setBookings]);
 
   const handleBooking = () => {
-    // if (!date || !timeSlot || !name || !email) {
-    //   toast.error("All fields are required.");
-    //   return;
-    // }
+    if (!date || !timeSlot || !name || !email) {
+      toast.error("All fields are required.");
+      return;
+    }
 
     const isSlotBooked = bookings.some(
       (booking) =>
@@ -96,7 +95,6 @@ const AvailableStudiosCard = ({ studio }) => {
         </div>
       </div>
 
-      {/* Unique Modal for Each Studio */}
       <dialog id={`booking_modal_${Id}`} className="modal">
         <div className="modal-box">
           <h2 className="text-xl font-bold">Book {Name}</h2>
@@ -117,11 +115,11 @@ const AvailableStudiosCard = ({ studio }) => {
               className="border p-2 w-full"
             >
               <option value="">-- Select Time --</option>
-              {availableSlots.map((slot, index) => (
-                <option key={index} value={slot}>
-                  {slot}
-                </option>
-              ))}
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
             </select>
           </div>
           <div className="mt-4">

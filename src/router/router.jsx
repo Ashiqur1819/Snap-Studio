@@ -4,29 +4,26 @@ import Home from "../pages/Home";
 import AvailableStudios from "../pages/AvailableStudios";
 import BookingHistory from "../pages/BookingHistory";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     errorElement: <h2>Error Page</h2>,
     children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "available_studios",
-            element: <AvailableStudios></AvailableStudios>
-        },
-        {
-            path: "booking_history",
-            element: <BookingHistory></BookingHistory>
-        },
-    ]
-    
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "available_studios",
+        element: <AvailableStudios></AvailableStudios>,
+      },
+      {
+        path: "booking_history",
+        element: <BookingHistory></BookingHistory>,
+      },
+    ],
   },
 ]);
 
-export default router
+export default router;
